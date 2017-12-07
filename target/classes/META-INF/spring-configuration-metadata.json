@@ -1,0 +1,32 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.tools.elf.repository.Mysql",
+      "name": "spring.datasource",
+      "type": "com.tools.elf.repository.Mysql"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.tools.elf.repository.Mysql",
+      "name": "spring.datasource.driver-class-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.tools.elf.repository.Mysql",
+      "name": "spring.datasource.password",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.tools.elf.repository.Mysql",
+      "name": "spring.datasource.url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.tools.elf.repository.Mysql",
+      "name": "spring.datasource.username",
+      "type": "java.lang.String"
+    }
+  ]
+}
