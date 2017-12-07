@@ -1,4 +1,4 @@
-package com.tools.elf.controller.Role;
+package com.tools.elf.controller.role;
 
 import com.tools.elf.bean.UserGroupRef;
 import com.tools.elf.service.RoleService;
