@@ -20,7 +20,8 @@ parameter:
     	"expiredDays": 7,
     	"fileSeparatorCode":0,
     	"storageormatCode":3,
-    	"tableOwner":"bin.zhang"
+    	"tableOwner":"bin.zhang",
+    	"devProduct":"0"
     }
 response:
     {

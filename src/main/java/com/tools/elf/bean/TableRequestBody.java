@@ -17,6 +17,7 @@ public class TableRequestBody {
     private Integer fileSeparatorCode; //文件列分隔符: 0表示制表符 , 1表示逗号
     private Integer storageormatCode; //数据文件存储格式(0:text, 1:RCFILE, 2:ORCFILE, 3:LZO)
     private String tableOwner ;//表的用户(拥有者)
+    private Integer devProduct; //否开发生产永久表，0否，1是
 
     public String getTableName() {
         return tableName;
@@ -88,5 +89,13 @@ public class TableRequestBody {
 
     public void setTableOwner(String tableOwner) {
         this.tableOwner = tableOwner;
+    }
+
+    public Integer getDevProduct() {
+        return devProduct;
+    }
+
+    public void setDevProduct(Integer devProduct) {
+        this.devProduct = devProduct;
     }
 }
