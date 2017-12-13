@@ -1,6 +1,6 @@
 package com.tools.elf.controller.table;
 
-import com.tools.elf.bean.TableRequestBody;
+import com.tools.elf.bean.TableRegisterBean;
 import com.tools.elf.service.TableRegisterService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
@@ -22,10 +23,10 @@ public class TableRegisterController {
     @Autowired
     private TableRegisterService impl;
 
-    @RequestMapping(value = "/createTable")
+    @RequestMapping(value = "/tableRegister" ,method = RequestMethod.POST)
     @ResponseBody
-    public Object createTable(@RequestBody TableRequestBody tableRequestBody){
-        return impl.createTable(tableRequestBody);
+    public Object createT(@RequestBody TableRegisterBean tableRegisterBean){
+        return impl.registerTable(tableRegisterBean);
     }
 
 }

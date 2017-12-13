@@ -1,6 +1,6 @@
 package com.tools.elf.service;
 
-import com.tools.elf.bean.TableRequestBody;
+import com.tools.elf.bean.TableRegisterBean;
 
 /**
  * @author
@@ -8,8 +8,12 @@ import com.tools.elf.bean.TableRequestBody;
  **/
 public interface TableRegisterService {
 
-    Object createTable(TableRequestBody tableRequestBody);
-    //Object updateTable();
-    //Object deleteTable();
+    Object registerTable(TableRegisterBean bean);//创建表
+
+    //Object editTableProperty(Integer tableId,String tableComment,Integer expiredDays,boolean disabled);//编辑表属主，注释，有效时长等
+
+    //Object editTableDDL();//编辑字段，分区
+
+    //Object deleteTable(); // 关闭表
     //Object showTable();
 }

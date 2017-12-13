@@ -1,23 +1,31 @@
 package com.tools.elf.bean;
 
-import java.util.List;
-import java.util.Map;
-
 /**
  * @author bin.zhang
- * @create 2017-12-07 15:55
+ * @create 2017-12-13 16:25
  **/
-public class TableRequestBody {
+public class TableProperty {
+    private Integer id;
     private String tableName;
     private String tableComment;
     private String dbName;
-    private List<Map<String,String>> colnums;
-    private List<Map<String,String>> partitions;
     private Integer expiredDays; //申请有效天数
     private Integer fileSeparatorCode; //文件列分隔符: 0表示制表符 , 1表示逗号
     private Integer storageormatCode; //数据文件存储格式(0:text, 1:RCFILE, 2:ORCFILE, 3:LZO)
     private String tableOwner ;//表的用户(拥有者)
     private Integer devProduct; //否开发生产永久表，0否，1是
+    private String createSql;
+    private boolean disabled;
+    private String createTime;
+    private String updateTime;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getTableName() {
         return tableName;
@@ -41,22 +49,6 @@ public class TableRequestBody {
 
     public void setDbName(String dbName) {
         this.dbName = dbName;
-    }
-
-    public List<Map<String, String>> getColnums() {
-        return colnums;
-    }
-
-    public void setColnums(List<Map<String, String>> colnums) {
-        this.colnums = colnums;
-    }
-
-    public List<Map<String, String>> getPartitions() {
-        return partitions;
-    }
-
-    public void setPartitions(List<Map<String, String>> partitions) {
-        this.partitions = partitions;
     }
 
     public Integer getExpiredDays() {
@@ -97,5 +89,37 @@ public class TableRequestBody {
 
     public void setDevProduct(Integer devProduct) {
         this.devProduct = devProduct;
+    }
+
+    public boolean isDisabled() {
+        return disabled;
+    }
+
+    public void setDisabled(boolean disabled) {
+        this.disabled = disabled;
+    }
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public String getCreateSql() {
+        return createSql;
+    }
+
+    public void setCreateSql(String createSql) {
+        this.createSql = createSql;
     }
 }

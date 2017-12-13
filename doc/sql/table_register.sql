@@ -10,6 +10,7 @@ create table meta_table (
  ,file_separator_code int(20) not null default 0 comment '分隔符: 0表示制表符 , 1表示逗号'
  ,storage_format_code int(20) not null default 0 comment '数据文件存储格式(0:text, 1:RCFILE, 2:ORCFILE, 3:LZO)'
  ,table_owner varchar(100) comment '创建表的用户'
+ ,create_sql varchar(4000) comment '执行的建表语句'
  ,create_time timestamp not null default '0000-00-00 00:00:00' comment '创建时间'
  ,update_time timestamp not null default current_timestamp comment '更新时间'
  ,disabled boolean not null default 0 comment '有效性标识'
@@ -28,9 +29,11 @@ create table meta_column (
  ,column_name varchar(100) not null comment '列名称'
  ,column_type varchar(100) not null comment '列类型'
  ,column_comment varchar(200) comment '列描述'
+ /*
  ,create_time timestamp not null default '0000-00-00 00:00:00' comment '创建时间'
  ,update_time timestamp not null default current_timestamp comment '更新时间'
  ,disabled boolean not null default 0 comment '有效性标识'
+ */
  ,unique key(id)
  ,unique key(table_id,column_name)
 ) ENGINE=INNODB
@@ -45,9 +48,11 @@ create table meta_partition (
  ,partition_name varchar(100) not null comment '分区名称'
  ,partition_type varchar(100) not null comment '分区类型'
  ,partition_comment varchar(200) comment '分区描述'
+ /*
  ,create_time timestamp not null default '0000-00-00 00:00:00' comment '创建时间'
  ,update_time timestamp not null default current_timestamp comment '更新时间'
  ,disabled boolean not null default 0 comment '有效性标识'
+ */
  ,unique key(id)
  ,unique key(table_id,partition_name)
 ) ENGINE=INNODB
