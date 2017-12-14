@@ -1,5 +1,6 @@
 package com.tools.elf.service;
 
+import com.tools.elf.bean.TableProperty;
 import com.tools.elf.bean.TableRegisterBean;
 
 /**
@@ -10,7 +11,7 @@ public interface TableRegisterService {
 
     Object registerTable(TableRegisterBean bean);//创建表
 
-    //Object editTableProperty(Integer tableId,String tableComment,Integer expiredDays,boolean disabled);//编辑表属主，注释，有效时长等
+    Object editTableProperty(TableProperty tableProperty);//编辑表属主，注释，有效时长等
 
     //Object editTableDDL();//编辑字段，分区
 

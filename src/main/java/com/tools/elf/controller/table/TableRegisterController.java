@@ -1,5 +1,6 @@
 package com.tools.elf.controller.table;
 
+import com.tools.elf.bean.TableProperty;
 import com.tools.elf.bean.TableRegisterBean;
 import com.tools.elf.service.TableRegisterService;
 import org.slf4j.Logger;
@@ -25,8 +26,14 @@ public class TableRegisterController {
 
     @RequestMapping(value = "/tableRegister" ,method = RequestMethod.POST)
     @ResponseBody
-    public Object createT(@RequestBody TableRegisterBean tableRegisterBean){
+    public Object registerTable(@RequestBody TableRegisterBean tableRegisterBean){
         return impl.registerTable(tableRegisterBean);
+    }
+
+    @RequestMapping(value = "/editTableProperty" ,method = RequestMethod.POST)
+    @ResponseBody
+    public Object editTableProperty(@RequestBody TableProperty tableProperty){
+        return impl.editTableProperty(tableProperty);
     }
 
 }
