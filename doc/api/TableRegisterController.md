@@ -34,3 +34,27 @@ response:
       "info": String
     }
 ```
+
+
+##二.编辑表属性
+###请求地址：http://localhost:8080/table/tableRegister
+```
+parameter:
+    {
+    	"id":1,
+    	"tableName":"tbl_elf",
+    	"tableComment":"test-elf",
+    	"dbName":"adm",
+    	"expiredDays": 14,
+    	"fileSeparatorCode":0,
+    	"storageormatCode":0,
+    	"tableOwner":"admin",
+    	"devProduct":"0"
+    }
+response:
+    {
+      "data": 1,
+      "success": false,
+      "info": "编辑成功 ！"
+    }
+```

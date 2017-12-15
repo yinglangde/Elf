@@ -1,5 +1,6 @@
 package com.tools.elf.controller.table;
 
+import com.tools.elf.bean.TableColumn;
 import com.tools.elf.bean.TableProperty;
 import com.tools.elf.bean.TableRegisterBean;
 import com.tools.elf.service.TableRegisterService;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 /**
  * @author bin.zhang
@@ -34,6 +37,12 @@ public class TableRegisterController {
     @ResponseBody
     public Object editTableProperty(@RequestBody TableProperty tableProperty){
         return impl.editTableProperty(tableProperty);
+    }
+
+    @RequestMapping(value = "/editColumnComment" ,method = RequestMethod.POST)
+    @ResponseBody
+    public Object editColumnComment(@RequestBody TableColumn column){
+        return impl.editColumnComment(column);
     }
 
 }

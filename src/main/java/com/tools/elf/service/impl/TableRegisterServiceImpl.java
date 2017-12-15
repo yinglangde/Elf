@@ -157,7 +157,20 @@ public class TableRegisterServiceImpl implements TableRegisterService{
         try {
             String sql="update meta_table set expired_days=? ,valid_date=DATE_ADD(create_time,INTERVAL ? day) ,table_comment=? ,table_owner=? ,disabled=? where id=?";
             int counter = jdbcTemplate.update(sql,tableProperty.getExpiredDays(),tableProperty.getExpiredDays(),tableProperty.getTableComment(),tableProperty.getTableOwner(),tableProperty.isDisabled(),tableProperty.getId());
-            return ResponseFactory.instance(false,counter,"编辑成功 ！");
+            return ResponseFactory.instance(true,counter,"编辑成功 ！");
+        }catch (Exception e){
+            logger.info("error:{}",e);
+            return ResponseFactory.instance(false,null,e.getMessage());
+        }
+    }
+
+    @Override
+    @Transactional
+    public Object editColumnComment(TableColumn column) {
+        try {
+            String sql="update meta_column set column_comment=? where table_id=? and column_name=?";
+            int counter = jdbcTemplate.update(sql,column.getColumnComment(),column.getTableId(),column.getColumnName());
+            return ResponseFactory.instance(true,counter,"编辑成功 ！");
         }catch (Exception e){
             logger.info("error:{}",e);
             return ResponseFactory.instance(false,null,e.getMessage());
