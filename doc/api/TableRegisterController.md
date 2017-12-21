@@ -36,8 +36,8 @@ response:
 ```
 
 
-##二.编辑表属性
-###请求地址：http://localhost:8080/table/tableRegister
+##二.编辑表属性(属主，注释，有效时长等)
+###请求地址：http://localhost:8080/table/editTableProperty
 ```
 parameter:
     {
@@ -49,12 +49,33 @@ parameter:
     	"fileSeparatorCode":0,
     	"storageormatCode":0,
     	"tableOwner":"admin",
-    	"devProduct":"0"
+    	"devProduct":"0",
+        "disabled":true
     }
 response:
     {
       "data": 1,
       "success": false,
       "info": "编辑成功 ！"
+    }
+```
+
+
+##三.编辑列注释
+###请求地址：http://localhost:8080/table/editColumnComment
+```
+parameter:
+    {
+    	"tableId":1
+    	,"columnName":"cola"
+    	,"columnType":"string"
+    	,"columnComment":"1qwe"
+    }
+
+response:
+    {
+      "data": 1,
+      "success": true,
+      "info": "编辑成功 ！==> SQL:update meta_column set column_comment=? where table_id=? and column_name=?"
     }
 ```
